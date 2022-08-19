@@ -8,6 +8,8 @@ import time
 # C = Celsius
 # F = Fahrenheit
 # K = Kelvin
+# Written by Ira Bell
+# Copyright (c) 2022 Space Elements
 
 def celsius_input(celsius):
 	fahrenheit = (celsius * 1.8) + 32
