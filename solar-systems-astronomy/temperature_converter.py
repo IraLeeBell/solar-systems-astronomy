@@ -9,6 +9,12 @@ import os
 # fahrenheit to kelvin
 # (32°F − 32) × 5/9 + 273.15 = 273.15K
 
+# celsius to kelvin
+# kelvin = celsius + 273.15
+
+# c to f
+# fahrenheit = (celsius x 1.8) + 32
+
 def celsius_input(celsius):
 	fahrenheit = (celsius x 1.8) + 32
 	kelvin = celsius + 273.15
