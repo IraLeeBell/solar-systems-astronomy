@@ -1,4 +1,6 @@
 import os
+import time
+
 # The following program converts any
 # F -> K, F -> C, K -> F, K -> C,
 # C -> F, and C -> K
@@ -28,32 +30,64 @@ def kelvin_input(kelvin):
 	fahrenheit_str = print(f"\t{fahrenheit} degrees Fahrenheit")
 	return celsius, celsius_str, fahrenheit, fahrenheit_str
 
-while True:
-	print(f"\nPlease input the temperature classification you would like to convert from [c, f, k] or 'q' to quit.")
+def float_test(examine):
+    try:
+        # Convert it into integer
+        val = int(examine)
+        print(f"\t{val} is an integer and acceptable to evaluate.")
+    except ValueError:
+        try:
+            # Convert it into float
+            val = float(examine)
+            print(f"\t{val} is a float number and acceptable to evaluate.")
+        except ValueError:
+            print(f"\t{examine} is a string and not acceptable to evaluate.")
+            print(f"\tThe program will reset in three seconds.")
+            time.sleep(3)
+            clear = lambda: os.system('cls')
+            clear()
+            main_program()
+
+def main_program():
+	while True:
+		print(f"\nPlease input the temperature classification you would like to convert from [c, f, k] or 'q' to quit.")
+		
+		temperature_classification = input("\n>>> ")
+		
+		if temperature_classification == 'q' or temperature_classification == 'Q':
+			quit()
+		if temperature_classification == 'c' or temperature_classification == 'C':
+			print("\nYou have selected Celsius.")
+			celsius = input("Please enter the temperature in Celsius that you would like to convert.\n>>>")
+			print("\n..calculating...")
+			float_test(celsius)
+			print("\n..calculating...")
+			print(f"\n{celsius} degrees Celsius converts to:")
+			celsius_input(float(celsius))
+		elif temperature_classification == 'f' or temperature_classification == 'F':
+			print("\nYou have selected Fahrenheit.")
+			fahrenheit = input("Please enter the temperature in Fahrenheit that you would like to convert.\n>>>")
+			print("\n...calculating...")
+			float_test(fahrenheit)
+			print("\n..calculating...")
+			print(f"\n{fahrenheit} degrees Fahrenheit converts to:")
+			fahrenheit_input(float(fahrenheit))
+		elif temperature_classification == 'k' or temperature_classification == 'K':
+			print("\nYou have selected Kelvin.")
+			kelvin = input("Please enter the temperature in Kelvin that you would like to convert.\n>>>")
+			print("\n...calculating...")
+			float_test(kelvin)
+			print("\n..calculating...")
+			print(f"\n{kelvin} degrees Kelvin converts to:")
+			kelvin_input(float(kelvin))
+		else:
+			clear = lambda: os.system('cls')
+			clear()
+		main_program()
+	main_program()
+
+# Run main program 
+
+main_program()
 	
-	temperature_classification = input("\n>>> ")
-	
-	if temperature_classification == 'q' or temperature_classification == 'Q':
-		break
-	if temperature_classification == 'c' or temperature_classification == 'C':
-		print("You have selected Celsius.")
-		celsius = input("Please enter the temperature in Celsius.\n>>>")
-		print(".\n..calculating...")
-		print(f"\n{celsius} degrees Celsius converts to:")
-		celsius_input(float(celsius))
-	elif temperature_classification == 'f' or temperature_classification == 'F':
-		print("You have selected Fahrenheit.")
-		fahrenheit = input("Please enter the temperature in Fahrenheit.\n>>>")
-		print("\n...calculating...")
-		print(f"\n{fahrenheit} degrees Fahrenheit converts to:")
-		fahrenheit_input(float(fahrenheit))
-	elif temperature_classification == 'k' or temperature_classification == 'K':
-		print("You have selected Kelvin.")
-		kelvin = input("Please enter the temperature in Kelvin.\n>>>")
-		print(".\n..calculating...")
-		print(f"\n{kelvin} degrees Kelvin converts to:")
-		kelvin_input(float(kelvin))
-	else:
-		clear = lambda: os.system('cls')
-		clear()
 
