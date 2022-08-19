@@ -1,5 +1,9 @@
 # Order of Operations
-x_variable = 10
-y_variable = ((3 * x_variable**2) + (6 * x_variable)) / (2 * x_variable)
+xrange = range(11, 33)
 
-print(y_variable)
+
+for x in xrange:
+	x_variable = x
+	y_variable = ((3 * x_variable**2) + (6 * x_variable)) / (2 * x_variable)
+	print(f"{x_variable}")
+	print(f"\t{y_variable}")
