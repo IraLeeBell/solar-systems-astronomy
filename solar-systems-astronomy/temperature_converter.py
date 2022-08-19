@@ -18,7 +18,7 @@ def celsius_input(celsius):
 
 def fahrenheit_input(fahrenheit):
 	celsius = (fahrenheit - 32) * .5556
-	celsius_str = print(f"\t{fahrenheit} degrees Celsius")
+	celsius_str = print(f"\t{celsius} degrees Celsius")
 	kelvin = ((fahrenheit - 32) * (5/9)) + 273.15
 	kelvin_str = print(f"\t{kelvin} degrees Kelvin")
 	return celsius, celsius_str, kelvin, kelvin_str
@@ -39,7 +39,7 @@ def float_test(examine):
         try:
             # Convert it into float
             val = float(examine)
-            print(f"\t{val} is a float number and acceptable to evaluate.")
+            print(f"\n\t{val} is a float number and acceptable to evaluate.")
         except ValueError:
             print(f"\t{examine} is a string and not acceptable to evaluate.")
             print(f"\tThe program will reset in three seconds.")
@@ -58,26 +58,26 @@ def main_program():
 			quit()
 		if temperature_classification == 'c' or temperature_classification == 'C':
 			print("\nYou have selected Celsius.")
-			celsius = input("Please enter the temperature in Celsius that you would like to convert.\n>>>")
-			print("\n..calculating...")
+			celsius = input("Please enter the temperature in Celsius that you would like to convert.\n>>> ")
+			print("\n...inspecting...")
 			float_test(celsius)
-			print("\n..calculating...")
+			print("\n...calculating...")
 			print(f"\n{celsius} degrees Celsius converts to:")
 			celsius_input(float(celsius))
 		elif temperature_classification == 'f' or temperature_classification == 'F':
 			print("\nYou have selected Fahrenheit.")
-			fahrenheit = input("Please enter the temperature in Fahrenheit that you would like to convert.\n>>>")
-			print("\n...calculating...")
+			fahrenheit = input("Please enter the temperature in Fahrenheit that you would like to convert.\n>>> ")
+			print("\n...inspecting...")
 			float_test(fahrenheit)
-			print("\n..calculating...")
+			print("\n...calculating...")
 			print(f"\n{fahrenheit} degrees Fahrenheit converts to:")
 			fahrenheit_input(float(fahrenheit))
 		elif temperature_classification == 'k' or temperature_classification == 'K':
 			print("\nYou have selected Kelvin.")
-			kelvin = input("Please enter the temperature in Kelvin that you would like to convert.\n>>>")
-			print("\n...calculating...")
+			kelvin = input("Please enter the temperature in Kelvin that you would like to convert.\n>>> ")
+			print("\n...inspecting...")
 			float_test(kelvin)
-			print("\n..calculating...")
+			print("\n...calculating...")
 			print(f"\n{kelvin} degrees Kelvin converts to:")
 			kelvin_input(float(kelvin))
 		else:
