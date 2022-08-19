@@ -24,7 +24,7 @@ print(item_1)
 print(color.AEG + "\nFormatted Result:" + color.AIF)
 print(item_1_float_value)
 
-# In the below instance, we use e to denote the 
+
 item_2 = 0.000000612*0.00031119
 item_2_formatted_string = "{:.2e}".format(item_2)
 item_2_float_value = float(item_2_formatted_string)
@@ -34,14 +34,14 @@ print(item_2)
 print(color.AEG + "\nFormatted Result:" + color.AIF)
 print(item_2_float_value)
 
+
 item_3 = 297060/0.0004839
-item_3_formatted_string = "{:.3f}".format(item_3)
-item_3_float_value = float(item_3_formatted_string)
 
 print(color.AEG + "\nOriginal Result:" + color.AIF)
 print(item_3)
 print(color.AEG + "\nFormatted Result:" + color.AIF)
-print(item_3_float_value)
+item_3_scientific_notation = "{:.2e}".format(item_3)
+print(item_3_scientific_notation)
 
 # reset color
 print(color.ENDC + "")
