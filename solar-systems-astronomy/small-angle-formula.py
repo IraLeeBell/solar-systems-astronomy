@@ -39,9 +39,22 @@ print(D_distance)
 # Sun distance = 1.5e8 km
 # What is the angular diameter?
 
-sun_diameter = 1.38e6
-sun_distance = 1.5e8
+sun_diameter = 3480
+sun_distance = 407000
 constant = 2.06e5
 
 sun_angular_diameter = ((sun_diameter) * constant) / sun_distance
-print(f"The angular diameter of the Sun is {sun_angular_diameter}.")
+print(f"The angular diameter of the Sun in arcseconds is {sun_angular_diameter}.")
+
+# convert answer to degrees
+
+sun_angular_diameter_in_degrees = ((sun_angular_diameter * (1/60)) * 1/60)
+print(f"The angular diameter of the sun in degrees is {sun_angular_diameter_in_degrees}.")
+
+
+print(1323.8933333333334/60)
+
+
+
+# 1969.4505494505495
+print(1969.4505494505495/1761.3759213759213)
