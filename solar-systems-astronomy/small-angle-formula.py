@@ -34,4 +34,14 @@ print(D_distance)
  #
  # linear diameter and distance need to be in the same units
 
- 
+
+# Sun Diameter = 1.39e6 km
+# Sun distance = 1.5e8 km
+# What is the angular diameter?
+
+sun_diameter = 1.38e6
+sun_distance = 1.5e8
+constant = 2.06e5
+
+sun_angular_diameter = ((sun_diameter) * constant) / sun_distance
+print(f"The angular diameter of the Sun is {sun_angular_diameter}.")
