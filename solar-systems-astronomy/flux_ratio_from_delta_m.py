@@ -1,7 +1,7 @@
 # Magnitude System - Flux Ratio from Delta M
 
-StarAMagnitude = 1.0
-StarBMagnitude = 7.32
+StarAMagnitude = 5.1
+StarBMagnitude = 5.7
 
 FluxRatioAB = 2.51 ** (StarBMagnitude - StarAMagnitude)
 print(FluxRatioAB)

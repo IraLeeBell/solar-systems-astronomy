@@ -3,8 +3,8 @@ import math
 
 StarNameA = "Sirus"
 StarNameB = "Polaris"
-StarAFlux = 24.2
-StarBFlux = 1
+StarAFlux = 5.1
+StarBFlux = 5.7
 
 Magnitude = 2.5 * (math.log10(StarAFlux / StarBFlux))
 
