@@ -53,16 +53,16 @@ def radiation(initial_state, final_state):
 	ey_value = ef_value-ei_value
 	abs_ey_value = abs(ey_value)
 	frequency = abs_ey_value / 4.136e-15
-	print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-	print(f'\nWith an initial state of level {initial_state} the Ei value is: {ei_value}')
-	print(f'With a final state of level {final_state} the Ef value is: {ef_value}')
+	print('\n\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+	print(f'\n* With an initial state of level {initial_state} the Ei value is: {ei_value}')
+	print(f'* With a final state of level {final_state} the Ef value is: {ef_value}')
 	print(f'\nApplying the data to the formula Ey = Ef ({ef_value}) - Ei ({ei_value})...')
-	print(f'\n\nThis results in an Ey value of: {ey_value}')
-	print(f'...with an absolute value of {abs_ey_value}')
+	print(f'\n\n\tThis results in an Ey value of: {ey_value}')
+	print(f'\t...with an absolute value of {abs_ey_value}')
 	print(f'\n\nTo calculate the frequency using E ({abs_ey_value}) = h (4.136e-15)* f:')
-	print(f'\nThis results in a frequency of {frequency} or ' + "{:.2E}".format(float(frequency)))
-	print(f'\n...which is in the ' + frequency_type(float(frequency)) + ' electromagnetic spectral region.')
-	print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+	print(f'\n\tThis results in a frequency of {frequency} or ' + "{:.2E}".format(float(frequency)))
+	print(f'\n\t...which is in the ' + frequency_type(float(frequency)) + ' electromagnetic spectral region.')
+	print(f'\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
 	return
 
 def frequency_type(frequency):
@@ -94,14 +94,19 @@ def sub_program():
 	while True:
 		print(f"\nPlease enter the level of the initial state:\n\n[Options]:\n\n[1, 2, 3, 4, 5, 6], 'cls' to clear screen or 'q' to quit.")
 		initial_state = input("\n>>> ")
-		# Check if user wants to quit
-		if initial_state == 'q' or initial_state == 'Q' or initial_state == 'quit' or initial_state == 'QUIT':
-			quit()
-		elif initial_state == 'cls':
-			clear = lambda: os.system('cls')
-			clear()
-			main_program()
-		elif 1 <= int(initial_state) < 7:
+		# Check for string input, and whether user wants to quit or clear the screen... or isn't complying w/ the options presented
+		if isinstance(initial_state, str):
+			if initial_state == 'q' or initial_state == 'Q' or initial_state == 'quit' or initial_state == 'QUIT':
+				print('\nExiting program....')
+				quit()
+			elif initial_state == 'cls':
+				clear = lambda: os.system('cls')
+				clear()
+				main_program()
+			print(f'\nThe input for the initial state was not understood, please try again.')
+			initial_state = 1
+			sub_program()
+		elif int(initial_state) >= 1 and int(initial_state) < 7:
 			print(f'\nThe input for the initial state of {initial_state} is acceptable.')
 		else:
 			print(f'\nThe input for the initial state was not understood, restarting program.')
@@ -110,21 +115,26 @@ def sub_program():
 		print(f"\nPlease enter the level of the final state:\n\n[Options]:\n\n[1, 2, 3, 4, 5, 6], 'cls' to clear screen or 'q' to quit.")
 		final_state = input("\n>>> ")
 		# Check if user wants to quit
-		if final_state == 'q' or final_state == 'Q' or final_state == 'quit' or final_state == 'QUIT':
-			quit()
-		elif initial_state == 'cls':
-			clear = lambda: os.system('cls')
-			clear()
-			main_program()
-		elif 1 <= int(final_state) < 7:
-			print(f'\nThe input for the initial state of {final_state} is acceptable.')
+		if isinstance(final_state, str):
+			if final_state == 'q' or final_state == 'Q' or final_state == 'quit' or final_state == 'QUIT':
+				print('\nExiting program....')
+				quit()
+			elif initial_state == 'cls':
+				clear = lambda: os.system('cls')
+				clear()
+				main_program()
+			print(f'\nThe input for the final state was not understood, please try again.')
+			initial_state = 1
+			sub_program()
+		elif int(final_state) >= 1 and int(final_state) < 7:
+			print(f'\nThe input for the final state of {final_state} is acceptable.')
 		else:
-			print(f'\nThe input for the initial state was not understood, restarting program.')
+			print(f'\nThe input for the final state was not understood, restarting program.')
 			final_state = 1
 			sub_program()
 		radiation(initial_state, final_state)
 		time.sleep(5)
-		print('...')
+		print('\n...')
 		print('....')
 		print('Back to main menu...\n')
 		sub_program()
