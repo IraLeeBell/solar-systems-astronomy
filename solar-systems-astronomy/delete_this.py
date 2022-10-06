@@ -1,5 +1,5 @@
-# Cosmic Matter - Light and Atoms 
-# by: Ira Bell       Version 0.1 
+Cosmic Matter - Light and Atoms 
+//by: Ira Bell       Version 0.1 
 # Copyright (c) 2022 Space Elements
 
 # Calculate the difference in energy (eV) when a photon
@@ -27,7 +27,7 @@ ei_value = 0
 ef_value = 0
 
 # This is the main math for the program, which returns the energy level and also the
-# frequency (note, we call a separate function for the frequency classification)
+# frequency (note, we call a seperate function for the frequency classification)
 def radiation(initial_state, final_state):
 	if int(initial_state) == 1:
 		ei_value = level_1
