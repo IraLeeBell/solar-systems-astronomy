@@ -3,7 +3,7 @@ import math
 
 '''the gravitational constant is equal to 6.67e-11 m^3/s^2/kg'''
 gravitational_constant = 6.67e-11
-
+speed_of_light = 2.998e+8
 '''mass of object being orbited'''
 
 earth_mass = 2.00e17
